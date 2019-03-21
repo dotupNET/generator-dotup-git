@@ -1,0 +1,66 @@
+{
+  "version": "0.0.0",
+  "name": "generator-dotup-git",
+  "author": {
+    "name": "Peter Ullrich",
+    "email": "dotup.software@gmail.com"
+  },
+  "scripts": {
+    "postpublish": "git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\" && git push origin --tags",
+    "commit-release": "git commit -a -m \"Release v%npm_package_version%\" && git push && git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\" && git push origin --tags",
+    "build": "tsc",
+    "test": "node node_modules/mocha/bin/mocha --require ts-node/register test/*.test.ts --reporter spec",
+    "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.test|.e2e).ts\"",
+    "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
+    "npm-publish": "npm publish"
+  },
+  "keywords": [
+    "TODO"
+  ],
+  "dependencies": {
+    "dotup-typescript-yeoman-generators": "^0.1.13",
+    "yeoman-generator": "^3.2.0",
+    "chalk": "^2.4.2",
+    "yosay": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/yeoman-generator": "3.1.0",
+    "yeoman-test": "^1.9.1",
+    "yeoman-assert": "^3.1.1",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "ts-node": "^8.0.3",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.3.4000",
+    "tslint": "^5.14.0",
+    "tslint-microsoft-contrib": "^6.1.0",
+    "gh-pages": "^2.0.1",
+    "gulp": "^4.0.0",
+    "gulp-tslint": "^8.1.4",
+    "gulp-typescript": "^5.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-typedoc": "^2.2.2",
+    "gulp-mocha": "^6.0.0",
+    "del": "^4.0.0",
+    "merge2": "^1.2.3"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "templates"
+    ]
+  },
+  "description": "TODO",
+  "main": "generators/app/index.js",
+  "types": "generators/app/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotupNET/generator-dotup-git.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dotupNET/generator-dotup-git/issues"
+  },
+  "homepage": "https://github.com/dotupNET/generator-dotup-git#readme"
+}
