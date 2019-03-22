@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "generator-dotup-git",
   "author": {
     "name": "Peter Ullrich",
@@ -23,7 +23,7 @@
     "git add"
   ],
   "dependencies": {
-    "generator-dotup-github": "^1.0.1",
+    "generator-dotup-github": "^1.0.2",
     "dotup-typescript-yeoman-generators": "^0.1.15",
     "dotup-ts-github-api": "^0.1.3",
     "yeoman-generator": "^3.2.0",
