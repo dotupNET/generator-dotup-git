@@ -38,12 +38,12 @@ export class GitGenerator extends BaseGenerator<GitQuestions> {
 
     // Repo name
     this.addQuestion(
-      new Question(GitQuestions.repositoryName, {
+      new Question(GitQuestions.projectName, {
         type: InquirerQuestionType.input,
-        default: opt.repositoryName,
+        default: opt.projectName,
         message: 'Enter repository name',
         description: 'Name of the repository',
-        When: () => !this.skipGenerator && opt.repositoryName === undefined
+        When: () => !this.skipGenerator && opt.projectName === undefined
       })
     );
 
@@ -61,21 +61,7 @@ export class GitGenerator extends BaseGenerator<GitQuestions> {
 
     if (this.answers.useGithub) {
       // Load git generator
-      this.composeWith(require.resolve('generator-dotup-github/generators/app'), this.answers
-        // Generator
-        // <any>{
-        //   Generator: GithubGenerator,
-        //   path: require.resolve('../github/index')
-        // },
-        // // Options
-        // this.answers // Pass through all answers
-        // {
-        //   [GithubQuestions.repositoryName]: this.answers.repositoryName,
-        //   [GithubQuestions.userName]: this.answers.userName
-        // }
-        // Settings
-      );
-
+      this.compose('generator-dotup-github/generators/app');
     }
   }
 

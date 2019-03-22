@@ -1,6 +1,6 @@
 export enum GitQuestions {
   directoryIsGitRepository = 'directoryIsGitRepository',
-  repositoryName = 'repositoryName',
+  projectName = 'projectName',
   rootPath = 'rootPath',
   useGithub = 'useGithub',
   userName = 'userName'
