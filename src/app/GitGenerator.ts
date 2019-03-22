@@ -1,16 +1,14 @@
 import { GitConfig } from 'dotup-ts-github-api';
 import { Nested, TypeSaveProperty } from 'dotup-ts-types';
 import { BaseGenerator, GeneratorOptions } from 'dotup-typescript-yeoman-generators';
-import { GitQuestions } from './GitQuestions';
 
-type PartialQuestions = Partial<TypeSaveProperty<Nested<GitQuestions, string>>>;
+type PartialQuestions = Partial<TypeSaveProperty<Nested<string, string>>>;
 
-export class GitGenerator extends BaseGenerator<GitQuestions> {
+export class GitGenerator extends BaseGenerator<string> {
 
-  constructor(args: string | string[], options: GeneratorOptions<GitQuestions>) {
+  constructor(args: string | string[], options: GeneratorOptions<string>) {
     super(args, options);
     super.registerMethod(this);
-    this.writeOptionsToAnswers(GitQuestions);
   }
 
   async initializing(): Promise<void> {
