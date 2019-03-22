@@ -1,6 +1,7 @@
 secrets/
 tmp/
 temp/
+generators
 
 .yo-rc.json
 

@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "1.0.1",
   "name": "generator-dotup-git",
   "author": {
     "name": "Peter Ullrich",
@@ -15,10 +15,17 @@
     "npm-publish": "npm publish"
   },
   "keywords": [
-    "TODO"
+    "yeoman",
+    "generator",
+    "typescript",
+    "git",
+    "git init",
+    "git add"
   ],
   "dependencies": {
-    "dotup-typescript-yeoman-generators": "^0.1.13",
+    "generator-dotup-github": "^1.0.1",
+    "dotup-typescript-yeoman-generators": "^0.1.15",
+    "dotup-ts-github-api": "^0.1.3",
     "yeoman-generator": "^3.2.0",
     "chalk": "^2.4.2",
     "yosay": "^2.0.2"
@@ -52,7 +59,7 @@
       "templates"
     ]
   },
-  "description": "TODO",
+  "description": "Yeoman generator to initialize git repository.",
   "main": "generators/app/index.js",
   "types": "generators/app/index.d.ts",
   "repository": {

@@ -1,7 +1,6 @@
 {
-  "version": "0.0.0",
-  "name": "<%= niceDay %>",
-  "author": {
-    "name": "<%= yourName %>"
+  "scripts": {
+    "postpublish": "git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\" && git push origin --tags",
+    "commit-release": "git commit -a -m \"Release v%npm_package_version%\" && git push && git tag -a v%npm_package_version% -m \"Release v%npm_package_version%\" && git push origin --tags"
   }
 }

@@ -1,3 +1,6 @@
-import { MyGenerator } from './MyGenerator';
+import { GitGenerator } from './GitGenerator';
 
-module.exports = MyGenerator;
+export * from './GitGenerator';
+export * from './GitQuestions';
+
+module.exports = GitGenerator;
