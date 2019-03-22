@@ -1,6 +1,6 @@
 import { GitConfig } from 'dotup-ts-github-api';
 import { Nested, TypeSaveProperty } from 'dotup-ts-types';
-import { BaseGenerator, ConfirmQuestion, InquirerQuestionType, Question } from 'dotup-typescript-yeoman-generators';
+import { BaseGenerator, ConfirmQuestion, InquirerQuestionType, Question, GeneratorOptions, SharedOptions } from 'dotup-typescript-yeoman-generators';
 // import { GithubGenerator, GithubQuestions } from 'generator-dotup-github';
 import { GitQuestions } from './GitQuestions';
 
@@ -9,8 +9,8 @@ type PartialQuestions = Partial<TypeSaveProperty<Nested<GitQuestions, string>>>;
 // Or export default!!
 export class GitGenerator extends BaseGenerator<GitQuestions> {
 
-  constructor(args: string | string[], options: Partial<TypeSaveProperty<Nested<GitQuestions, string>>>) {
-    super(args, options);
+  constructor(args: string | string[], options: GeneratorOptions<GitQuestions>, sharedOptions?: SharedOptions<GitQuestions>) {
+    super(args, options, sharedOptions);
     super.registerMethod(this);
 
     const opt = <PartialQuestions>this.options;
@@ -18,6 +18,8 @@ export class GitGenerator extends BaseGenerator<GitQuestions> {
       throw new Error('rootPath option required.');
     }
     this.writeOptionsToAnswers(GitQuestions);
+
+    this.trySubscribeSharedOption(GitQuestions.projectName);
   }
 
   async initializing(): Promise<void> {
