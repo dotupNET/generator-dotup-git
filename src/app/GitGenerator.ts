@@ -9,8 +9,8 @@ type PartialQuestions = Partial<TypeSaveProperty<Nested<GitQuestions, string>>>;
 // Or export default!!
 export class GitGenerator extends BaseGenerator<GitQuestions> {
 
-  constructor(args: string | string[], options: GeneratorOptions<GitQuestions>, sharedOptions?: SharedOptions<GitQuestions>) {
-    super(args, options, sharedOptions);
+  constructor(args: string | string[], options: GeneratorOptions<GitQuestions>) {
+    super(args, options);
     super.registerMethod(this);
 
     const opt = <PartialQuestions>this.options;
