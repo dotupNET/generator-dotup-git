@@ -40,7 +40,7 @@
       "stopOnEntry": false,
       "sourceMaps": true,
       "cwd": "${workspaceRoot}",
-      "protocol": "inspector",
+      "protocol": "inspector"
     },
     {
       "name": "Current JS File",
@@ -97,7 +97,7 @@
       "runtimeArgs": [
         "--nolazy"
       ],
-      "console": "internalConsole",
+      "console": "internalConsole"
     }    
   ]
 }
