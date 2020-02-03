@@ -1,4 +1,5 @@
 test/
+tmp/
 play/
 tools/
 coverage/
@@ -26,4 +27,4 @@ gulpfile.config.js
 gulpfile.js
 .yo-rc-json
 .eslintrc.json
-!generators/app/templates/**/*
+!generators/*/templates/*
