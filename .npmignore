@@ -25,6 +25,10 @@ tslint.json
 gruntfile.js
 gulpfile.config.js
 gulpfile.js
-.yo-rc-json
+.yo-rc.json
 .eslintrc.json
 !generators/*/templates/*
+!generators/ts/templates/*
+!generators/ts-app/templates/*
+!generators/ts-lib/templates/*
+!generators/*/templates/**/*
